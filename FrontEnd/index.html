@@ -9,18 +9,23 @@
 	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
 	<meta name="description" content="">
 	<link rel="stylesheet" href="./assets/style.css">
-</head>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+	</head>
 <body>
+	<div  id="editingMode"> <i class="fa-regular fa-pen-to-square"></i>Editing Mode</div>
+	<div class="container">
 <header>
+	<div id="logo">
 	<h1>Sophie Bluel <span>Interior Designer</span></h1>
 	<nav>
 		<ul>
-			<li>projects</li>
-			<li>contact</li>
-			<li>login</li>
+			<li>Projects</li> 
+			<li>Contact</li>
+			<li id="login">Login</li>
 			<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
 		</ul>
 	</nav>
+	</div>
 </header>
 <main>
 	<section id="introduction">
@@ -35,54 +40,63 @@
 		</article>
 	</section>
 	<section id="portfolio">
-		<h2>My Projects</h2>
+
+		<h2>
+			My Projects 
+			<div id="edit"><i class="fa-regular fa-pen-to-square"></i>Edit</div>
+		</h2>
+
+		<dialog class="modal">
+		<div class="close-modal">
+		    <i class="fa-solid fa-xmark"></i>
+		</div>
+		<div class="modal-title">Photo Gallery</div>
+		<div class="modal-container">
+			<ul class="mini-photo-container">
+		    </ul>
+			<hr>
+		    <button id="add-photo">Add a photo</button> 
+		</div>
+	</dialog>
+
+		<dialog class="modal-2">
+		<div class="back-and-close">
+		   <i class="fa-solid fa-arrow-left"></i>
+		   <i class="fa-solid fa-xmark"></i>
+		</div>
+		<div class="modal-title-2">Add photo</div>
+		<div class="modal-container-2">
+			<div class="add-img">
+				<img id="preview"/>
+				<div class="add-img-box">
+				    <i class="fa-solid fa-image"></i>
+				    <button class="plus-img">+Add photo</button>
+				    <input type="file" accept="image/*" id="imgfile"> 
+				    <div id="img-size">jpg, png: max 4 MB</div>
+				</div>
+			</div>
+			<form action="#">
+				<label for="title">Title</label>
+			    <input type="text" id="select-title">
+			    <label for="category">Category</label>
+			    <select name="" id="select-category"></select>
+			</form>
+			<hr>
+		    <button id="confirm">Confirm</button>
+		</div>
+		</dialog>	
+
+		<div class="overlay"></div>
+
+		<div class="filters"> 
+		
+		</div>
+
 		<div class="gallery">
-			<figure>
-				<img src="assets/images/abajour-tahina.png" alt="Tahina Lampshade">
-				<figcaption>Tahina Lampshade</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/appartement-paris-v.png" alt="Paris V Appartment">
-				<figcaption>Paris V Appartment</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/restaurant-sushisen-londres.png" alt="Sushisen Restaurant - London">
-				<figcaption>Sushisen Restaurant - London</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/la-balisiere.png" alt="La Balisière” Villa – Port-Louis">
-				<figcaption>“La Balisière” Villa – Port-Louis</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/structures-thermopolis.png" alt="Thermopolis Structures">
-				<figcaption>Thermopolis Structures</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/appartement-paris-x.png" alt="Paris X Appartment">
-				<figcaption>Paris X Appartment</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/le-coteau-cassis.png" alt="Le Coteau” Pavillon - Cassis">
-				<figcaption>“Le Coteau” Pavillon - Cassis</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/villa-ferneze.png" alt="Ferneze Villa - Elba">
-				<figcaption>Ferneze Villa - Elba</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/appartement-paris-xviii.png" alt="Paris XVIII Appartment">
-				<figcaption>Paris XVIII Appartment</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/bar-lullaby-paris.png" alt="Lullaby” Bar - Paris">
-				<figcaption>“Lullaby” Bar - Paris</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/hotel-first-arte-new-delhi.png" alt="Hotel First Arte - New Delhi">
-				<figcaption>First Arte Hotel - New Delhi</figcaption>
-			</figure>
+			
 		</div>
 	</section>
+
 	<section id="contact">
 		<h2>Contact</h2>
 		<p>Do you have a project in mind? Let’s talk about it!</p>
@@ -105,5 +119,7 @@
 		</ul>
 	</nav>
 </footer>
+</div>
+<script src="./script.js"></script>
 </body>
 </html>
